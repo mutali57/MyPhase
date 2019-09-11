@@ -1,27 +1,4 @@
-const input = document.getElementById('lbsInput');
-const output = document.getElementById('output');
-
-output.style.visibility = 'hidden';
-
-input.addEventListener('input', (e) => {
-  let lbs = e.target.value;
-
-  output.style.visibility = 'visible';
-
-  let grams = document.getElementById('gOutput');
-  grams.innerHTML = lbs/0.0022046;
-
-  let kiloGrams = document.getElementById('kgOutput');
-  kiloGrams.innerHTML = lbs/2.2046;
-
-  let ounces = document.getElementById('ozOutput');
-  ounces.innerHTML = lbs*16;
-
-  e.preventDefault();
-});
-Code snippet:
-
-var myList = [{"Position":1,"Team":"Manchester United","Played Matches":38,"Total Wins":28,"Total Draws":7,"Total Losses":3,"Total Goals Scored":97,"Total Goals Received":45,"Home Wins":15,"Home Draws":4,"Home Losses":0,"Home Goals Scored":59,"Home Goals Received":16,"Away Wins":13,"Away Draws":3,"Away Losses":3,"Away Goals Scored":38,"Away Goals Received":29,"Average Goals per Match":+52,"Points":91},
+[{"Position":1,"Team":"Manchester United","Played Matches":38,"Total Wins":28,"Total Draws":7,"Total Losses":3,"Total Goals Scored":97,"Total Goals Received":45,"Home Wins":15,"Home Draws":4,"Home Losses":0,"Home Goals Scored":59,"Home Goals Received":16,"Away Wins":13,"Away Draws":3,"Away Losses":3,"Away Goals Scored":38,"Away Goals Received":29,"Average Goals per Match":+52,"Points":91},
 {"Position":2,"Team":"Arsenal","Played Matches":38,"Total Wins":22,"Total Draws":7,"Total Losses":9,"Total Goals Scored":73,"Total Goals Received":43,"Home Wins":14,"Home Draws":3,"Home Losses":2,"Home Goals Scored":42,"Home Goals Received":17,"Away Wins":8,"Away Draws":4,"Away Losses":7,"Away Goals Scored":31,"Away Goals Received":26,"Average Goals per Match":+30,"Points":73},
 {"Position":3,"Team":"Leeds United","Played Matches":38,"Total Wins":21,"Total Draws":6,"Total Losses":11,"Total Goals Scored":58,"Total Goals Received":43,"Home Wins":12,"Home Draws":2,"Home Losses":5,"Home Goals Scored":29,"Home Goals Received":18,"Away Wins":9,"Away Draws":4,"Away Losses":6,"Away Goals Scored":29,"Away Goals Received":25,"Average Goals per Match":+15,"Points":69},
 {"Position":4,"Team":"Liverpool","Played Matches":38,"Total Wins":19,"Total Draws":10,"Total Losses":9,"Total Goals Scored":51,"Total Goals Received":30,"Home Wins":11,"Home Draws":4,"Home Losses":4,"Home Goals Scored":28,"Home Goals Received":13,"Away Wins":8,"Away Draws":6,"Away Losses":5,"Away Goals Scored":23,"Away Goals Received":17,"Average Goals per Match":+21,"Points":67},
@@ -40,66 +17,4 @@ var myList = [{"Position":1,"Team":"Manchester United","Played Matches":38,"Tota
 {"Position":17,"Team":"Bradford City","Played Matches":38,"Total Wins":9,"Total Draws":9,"Total Losses":20,"Total Goals Scored":38,"Total Goals Received":68,"Home Wins":6,"Home Draws":8,"Home Losses":5,"Home Goals Scored":26,"Home Goals Received":29,"Away Wins":3,"Away Draws":1,"Away Losses":15,"Away Goals Scored":12,"Away Goals Received":39,"Average Goals per Match":-30,"Points":36},
 {"Position":18,"Team":"Wimbledon","Played Matches":38,"Total Wins":7,"Total Draws":12,"Total Losses":19,"Total Goals Scored":46,"Total Goals Received":74,"Home Wins":6,"Home Draws":7,"Home Losses":6,"Home Goals Scored":30,"Home Goals Received":28,"Away Wins":1,"Away Draws":5,"Away Losses":13,"Away Goals Scored":16,"Away Goals Received":46,"Average Goals per Match":-28,"Points":33},
 {"Position":19,"Team":"Sheffield Wednesday","Played Matches":38,"Total Wins":8,"Total Draws":7,"Total Losses":23,"Total Goals Scored":38,"Total Goals Received":70,"Home Wins":6,"Home Draws":3,"Home Losses":10,"Home Goals Scored":21,"Home Goals Received":23,"Away Wins":2,"Away Draws":4,"Away Losses":13,"Away Goals Scored":17,"Away Goals Received":47,"Average Goals per Match":-32,"Points":31},
-{"Position":20,"Team":"Watford","Played Matches":38,"Total Wins":6,"Total Draws":6,"Total Losses":26,"Total Goals Scored":35,"Total Goals Received":77,"Home Wins":5,"Home Draws":4,"Home Losses":10,"Home Goals Scored":24,"Home Goals Received":31,"Away Wins":1,"Away Draws":2,"Away Losses":16,"Away Goals Scored":11,"Away Goals Received":46,"Average Goals per Match":-42,"Points":24}];
-
-// Builds the HTML Table out of myList.
-function buildHtmlTable(selector) {
-  var columns = addAllColumnHeaders(myList, selector);
-
-  for (var i = 0; i < myList.length; i++) {
-    var row$ = $('<tr/>');
-    for (var colIndex = 0; colIndex < columns.length; colIndex++) {
-      var cellValue = myList[i][columns[colIndex]];
-      if (cellValue == null) cellValue = "";
-      row$.append($('<td/>').html(cellValue));
-    }
-    $(selector).append(row$);
-  }
-}
-// Builds the HTML Table out of myList.
-function buildHtmlTable(selector) {
-  var columns = addAllColumnHeaders(myList, selector);
-
-  for (var i = 0; i < myList.length; i++) {
-    var row$ = $('<tr/>');
-    for (var colIndex = 0; colIndex < columns.length; colIndex++) {
-      var cellValue = myList[i][columns[colIndex]];
-      if (cellValue == null) cellValue = "";
-      row$.append($('<td/>').html(cellValue));
-    }
-    $(selector).append(row$);
-  }
-}
-// Adds a header row to the table and returns the set of columns.
-// Need to do union of keys from all records as some records may not contain
-// all records.
-function addAllColumnHeaders(myList, selector) {
-  var columnSet = [];
-  var headerTr$ = $('<tr/>');
-
-  for (var i = 0; i < myList.length; i++) {
-    var rowHash = myList[i];
-    for (var key in rowHash) {
-      if ($.inArray(key, columnSet) == -1) {
-        columnSet.push(key);
-        headerTr$.append($('<th/>').html(key));
-      }
-    }
-  }
-  $(selector).append(headerTr$);
-
-  return columnSet;
-}
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('../sw.js').then( () => {
-      console.log('Service Worker Registered')
-    })
-  })
-}
-
-
-
-
-
+{"Position":20,"Team":"Watford","Played Matches":38,"Total Wins":6,"Total Draws":6,"Total Losses":26,"Total Goals Scored":35,"Total Goals Received":77,"Home Wins":5,"Home Draws":4,"Home Losses":10,"Home Goals Scored":24,"Home Goals Received":31,"Away Wins":1,"Away Draws":2,"Away Losses":16,"Away Goals Scored":11,"Away Goals Received":46,"Average Goals per Match":-42,"Points":24}]

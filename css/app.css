@@ -11,3 +11,54 @@ body {
 .card {
   padding: 10px;
 }
+table,th,tr,td{border: 5px solid:Grey
+  border-collapse:collapse
+  
+
+}
+
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 2
+  30px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  
+}
+
+
+
+.main{
+ font-size:20px;
+  margin-left:210px;
+ margin-right:100px;
+  padding-left:20px;
+  padding-right:20px;
+}
